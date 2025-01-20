@@ -1,10 +1,10 @@
 # Next.js Boilerplate with Supabase & NextAuth
 
-A Next.js boilerplate featuring seamless integration with Supabase and NextAuth, designed to help you quickly build modern, full-stack web applications. This template includes a pre-built signup and login page, robust authentication, and database integration. It supports email and social logins via NextAuth with AUTH APIs, and is styled with TailwindCSS for responsive UI components. Ideal for scalable, secure, and customizable full-stack apps.
+A Next.js boilerplate featuring seamless integration with Supabase and NextAuth, designed to help you quickly build modern, full-stack web applications. This template includes a pre-built signup and login page, robust authentication, and database integration. It supports email via NextAuth with AUTH APIs, and is styled with TailwindCSS for responsive UI components. Ideal for scalable, secure, and customizable full-stack apps.
 
 ## Features
 
-- **Authentication:** Pre-integrated signup and login pages using NextAuth, with support for email and social logins.
+- **Authentication:** Pre-integrated signup and login pages using NextAuth, with support for email.
 - **Database Integration:** Seamlessly connects to Supabase for database management.
 - **Scalable & Secure:** Provides a strong foundation for secure, full-stack web applications.
 
