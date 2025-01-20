@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",  // Ensure base URL is set to `src`
+    "paths": {
+      "@/*": ["*"]  // Alias for `@` to map to `src/`
+    }
+  },
+  "include": [
+    "src/**/*.js",
+    "src/**/*.jsx"   // Include JavaScript and JSX files
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
