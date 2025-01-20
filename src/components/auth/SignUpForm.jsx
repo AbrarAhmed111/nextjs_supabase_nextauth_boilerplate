@@ -75,9 +75,9 @@ function SignUpForm() {
     <div className="flex items-center bg-[#041316] justify-center min-h-[100vh] py-12 bg-auth w-full">
       <div className="w-[300px] bg-[#044355] flex flex-col items-center justify-center text-white/90 rounded-[35px] sm:w-[440px] p-6  md:w-[450px] lg:w-[400px] mx-2 md:mx-0">
         <div className="flex flex-col items-center justify-center gap-y-4">
-          <Link href="/">
+          {/* <Link href="/">
             <Image src={""} alt="logo" className="w-[45px] md:w-[60px]" />
-          </Link>
+          </Link> */}
           <div className="text-lg font-bold text-center md:text-2xl">Sign Up</div>
           <div className="pt-1 pb-5 text-sm">Join us today!</div>
         </div>
@@ -170,8 +170,11 @@ function SignUpForm() {
             Sign Up
           </button>
 
-          <div className="flex items-center justify-center text-sm text-white gap-x-4">
-            Already have an account? <Link href="/auth/sign-in">Signn In</Link>
+          <div  className="text-xs text-center text-gray-400">
+            Already have an account?{" "}
+            <Link href="/auth/signin">
+              <span className="text-blue-500">Sign in</span>
+            </Link>
           </div>
 
           

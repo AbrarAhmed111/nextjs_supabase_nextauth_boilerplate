@@ -1,11 +1,10 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import jwt from "jsonwebtoken";
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
-// Define authentication options using NextAuthOptions interface
-const authOptions = {
 
-  
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+
+const authOptions = {
   providers: [
     CredentialsProvider({
       name: "credentials",
@@ -14,13 +13,10 @@ const authOptions = {
         const { email, password } = credentials;
 
         if (!email || !password) {
-          console.error("Missing email or password");
-          return null;
+          throw new Error("Email and password are required.");
         }
 
         try {
-          console.log("Attempting login for email:", email);
-
           const response = await fetch(`${BASE_URL}/api/auth/signin`, {
             method: "POST",
             body: JSON.stringify({ email, password }),
@@ -28,15 +24,12 @@ const authOptions = {
           });
 
           const data = await response.json();
-          console.log("API Response:", data);
 
           if (response.ok && data?.data?.token) {
-            console.log("Login successful:", data);
             const decodedToken = jwt.decode(data.data.token);
 
             if (!decodedToken) {
-              console.error("Failed to decode token");
-              return null;
+              throw new Error("Failed to decode token.");
             }
 
             // Return user data
@@ -46,17 +39,16 @@ const authOptions = {
               name: decodedToken.fullName,
               userId: decodedToken.userId, // Adding userId explicitly
             };
+          } else if (response.status === 401) {
+            throw new Error("Invalid credentials. Please try again.");
+          } else if (response.status === 404) {
+            throw new Error("User not found. Please check your email.");
           } else {
-            console.error(
-              "Authentication failed:",
-              response.status,
-              data.message || "No additional details"
-            );
-            return null;
+            throw new Error(data.message || "An unexpected error occurred.");
           }
         } catch (error) {
           console.error("Error in authorize function:", error.message);
-          return null;
+          throw new Error(error.message || "Authentication failed.");
         }
       },
     }),
@@ -92,13 +84,12 @@ const authOptions = {
     },
   },
   pages: {
-    signIn: "/",
+    signIn: "/auth/signin", // Specify a custom sign-in page
+    error: "/auth/error", // Specify an error page
   },
   secret: process.env.NEXTAUTH_SECRET,
 };
 
-// Create NextAuth handler
 const handler = NextAuth(authOptions);
 
-// Export the handler functions for GET and POST requests
 export { handler as GET, handler as POST };

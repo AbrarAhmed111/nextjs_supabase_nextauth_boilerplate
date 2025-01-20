@@ -1,10 +1,10 @@
+import SignUpForm from '@/components/auth/SignUpForm'
 import React from 'react'
-import SignUpForm from '@/component/auth/SignUpForm'
-const SignUpPage = () => {
+
+const page = () => {
   return (
     <SignUpForm/>
-
-  )
+)
 }
 
-export default SignUpPage
+export default page

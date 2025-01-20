@@ -8,7 +8,7 @@ export async function POST(req) {
 
     // Check if the email exists in the database
     const { data: user, error } = await supabase
-      .from('auth') // Table name
+      .from('authadmin') // Table name
       .select('*')
       .eq('email', email)
       .single();

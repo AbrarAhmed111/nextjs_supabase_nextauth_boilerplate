@@ -1,7 +1,8 @@
+import SignInForm from '@/components/auth/SignInForm'
 import React from 'react'
-// import SignInForm from '@/components/auth/SignInForm'
 const SignInPage = () => {
   return (
+    
     <SignInForm/>
 
   )

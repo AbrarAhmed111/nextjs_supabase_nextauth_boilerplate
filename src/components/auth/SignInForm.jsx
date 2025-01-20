@@ -64,9 +64,9 @@ const SignInForm = () => {
     <div  className="flex items-center bg-[#041316] justify-center min-h-[100vh] py-12 bg-auth w-full">
       <div  className="w-[300px] bg-[#044355] flex flex-col items-center justify-center text-white/90 rounded-[35px] sm:w-[440px] p-6  md:w-[450px] lg:w-[400px] mx-2 md:mx-0">
         <div  className="flex flex-col items-center justify-center gap-y-4">
-          <Link href="/">
+          {/* <Link href="/">
             <Image src={''} alt="logo" className="w-[45px] md:w-[60px]" />
-          </Link>
+          </Link> */}
           <div className="text-lg font-bold text-center md:text-2xl">
             Log in
           </div>
@@ -124,8 +124,8 @@ const SignInForm = () => {
 
           <div  className="text-xs text-center text-gray-400">
             Don&apos;t have an account?{" "}
-            <Link href="/auth/sign-up">
-              <a className="text-blue-500">Sign up</a>
+            <Link href="/auth/signup">
+              <span className="text-blue-500">Sign up</span>
             </Link>
           </div>
          

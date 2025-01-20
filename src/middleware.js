@@ -10,13 +10,18 @@ export async function middleware(req) {
     return NextResponse.next();
   }
 
+  // Allow access to the signin and signup pages without a token
+  if (!token && (pathname === "/auth/signin" || pathname === "/auth/signup")) {
+    return NextResponse.next();
+  }
+
   // If no token and trying to access protected routes, redirect to signin
-  if (!token && pathname !== "/auth/signin") {
+  if (!token) {
     return NextResponse.redirect(new URL("/auth/signin", req.url));
   }
 
-  // If token exists and trying to access signin page, redirect to dashboard
-  if (pathname === "/auth-signin" && token) {
+  // If token exists and trying to access signin or signup pages, redirect to dashboard
+  if ((pathname === "/auth/signin" || pathname === "/auth/signup") && token) {
     return NextResponse.redirect(new URL("/", req.url));
   }
 
