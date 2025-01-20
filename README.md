@@ -46,6 +46,7 @@ Make sure you have the following installed:
 
    NEXTAUTH_URL=
    NEXTAUTH_SECRET=
+   JWT_SECRET=
 
    # Redirecting Link
    SUCCESS_REDIRECT_LOCAL_LINK=
