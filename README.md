@@ -1,93 +1,83 @@
-VHD Project Setup and Usage Guide
+# Next.js Boilerplate with Supabase & NextAuth
 
-Welcome to your VHD project! This README file provides step-by-step instructions to help you set up and understand the structure of the project.
+A Next.js boilerplate featuring seamless integration with Supabase and NextAuth, designed to help you quickly build modern, full-stack web applications. This template includes a pre-built signup and login page, robust authentication, and database integration. It supports email and social logins via NextAuth with AUTH APIs, and is styled with TailwindCSS for responsive UI components. Ideal for scalable, secure, and customizable full-stack apps.
 
-Project Setup
-Follow these steps to set up and run the project:
+## Features
 
-1. Clone the Repository
-Clone the project repository to your local machine:
+- **Authentication:** Pre-integrated signup and login pages using NextAuth, with support for email and social logins.
+- **Database Integration:** Seamlessly connects to Supabase for database management.
+- **Scalable & Secure:** Provides a strong foundation for secure, full-stack web applications.
 
+## Getting Started
 
-git clone <repository-url>  
-cd <repository-folder>  
-2. Install Dependencies
-Install all necessary packages using npm or yarn:
+### Prerequisites
 
+Make sure you have the following installed:
 
+- Node.js (version 14 or above)
+- npm or yarn
 
-npm install  
-Or, if you prefer Yarn:
+### Installation
 
+1. Clone the repository:
 
-yarn install  
+   ```bash
+   git clone https://github.com/your-username/nextjs-supabase-nextauth-boilerplate.git
+   cd nextjs-supabase-nextauth-boilerplate
+   ```
 
-3. Run the Development Server
-Start the Next.js development server:
+2. Install dependencies:
 
+   ```bash
+   npm install
+   ```
 
+   Or, if using yarn:
 
-npm run dev  
-Or, with Yarn:
+   ```bash
+   yarn install
+   ```
 
+3. Create a `.env.local` file in the root directory of the project and add the following environment variables:
 
+   ```env
+   # Base URL
+   NEXT_PUBLIC_BASE_URL=
 
-yarn dev  
-Open http://localhost:3000 in your browser to view the application.
+   NEXTAUTH_URL=
+   NEXTAUTH_SECRET=
 
-4. Build for Production
-To create an optimized production build, run:
+   # Redirecting Link
+   SUCCESS_REDIRECT_LOCAL_LINK=
+   CANCEL_REDIRECT_LOCAL_LINK=
 
+   # Supabase
+   NEXT_PUBLIC_SUPABASE_URL=
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=
+   ```
 
-npm run build  
-Then, start the production server:
+4. Run the development server:
 
-npm start  
-5. Linting and Formatting
-To check code quality and apply formatting:
+   ```bash
+   npm run dev
+   ```
 
+   Or, if using yarn:
 
-npm run lint  
-npm run format  
-Project Structure
-Here's a brief overview of the project structure:
+   ```bash
+   yarn dev
+   ```
 
-├── public/                  # Static files accessible via root URL  
-├── src/  
-│   ├── components/          # Contains all reusable components  
-│   │   ├── Header.js        # Header component  
-│   │   ├── Footer.js        # Footer component  
-│   │   └── ...              # Other components  
-│   ├── home/                # Contains code for individual sections of the homepage  
-│   │   ├── HeroSection.js   # Hero section of the homepage  
-│   │   ├── services.js      # Services section  
-│   │   └── ...              # Other sections  
-│   ├── app/               # Next.js pages and routing  
-│   │   ├── page.js         # Homepage  
-│   │   └── ...              # Other pages  
-│   ├── assets/css           # Contains global and component-specific styles   
-│   └── ...                  # Additional folders as required  
-├── .env.local               # Local environment variables  
-├── next.config.js           # Next.js configuration  
-├── package.json             # Project metadata and scripts  
-└── README.md                # Project instructions (this file)  
-Key Information
-Components Folder:
+5. The application will be available at [http://localhost:3000](http://localhost:3000).
 
-All reusable components are stored in the components folder.
-Example: Header.js, Footer.js.
-Home Folder:
+## Deployment
 
-All homepage sections are organized in the home folder.
-Example: HeroSection.js, Features.js.
+You can deploy your Next.js app on platforms like Vercel or Netlify. Make sure to configure the environment variables in the deployment settings accordingly.
 
-Global Styles:
+## License
 
-Global styles are defined in assets/css/globals.css.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-Routing:
+## Credits
 
-The app folder handles routing in the app. Each page/folder file corresponds to a route.
-
-Support
-If you encounter any issues or have questions, feel free to reach out to me AbrarAhmed111 @ github.
+Developed by [Abrar Ahmed](https://github.com/AbrarAhmed111).
